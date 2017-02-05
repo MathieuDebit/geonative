@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import GeolocationDisplay from './GeolocationDisplay';
-import SvgMap from './SvgMap';
+import ParisMap from '../svg/ParisMap.js';
 
 class HomeContainer extends Component {
   state = {
@@ -51,11 +51,12 @@ class HomeContainer extends Component {
     return (
       <View>
         { initialCoords &&
-          <SvgMap params={{
-              top: 0,
-              left: 0,
-              scale: 1,
-            }}
+          <ParisMap
+            width={300}
+            height={500}
+            scale={2}
+            x={-1400}
+            y={-600}
           />
         }
       </View>
