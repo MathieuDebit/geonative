@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import GeolocationDisplay from './GeolocationDisplay';
 import SvgMap from './SvgMap';
 
@@ -38,12 +39,26 @@ class HomeContainer extends Component {
   }
 
   render() {
+    const initialCoords = this.state.initialPosition.coords;
+    let longitude = 0;
+    let latitude = 0;
+
+    if (initialCoords) {
+      longitude = - (initialCoords.longitude.toString().split(".")[1] - 24636) / 17.681;
+      latitude = (initialCoords.latitude.toString().split(".")[1] - 91166) / 10.458;
+    }
+
     return (
-      <SvgMap params={{
-          top: 0,
-          left: 0,
-          scale: 1,
-        }} />
+      <View>
+        { initialCoords &&
+          <SvgMap params={{
+              top: 0,
+              left: 0,
+              scale: 1,
+            }}
+          />
+        }
+      </View>
     );
   }
 }

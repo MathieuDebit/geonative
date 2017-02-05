@@ -8,8 +8,8 @@ class SvgMap extends Component {
     container: {
       width: 1000,
       height: 1000,
-      top: - this.props.params.top,
-      left: - this.props.params.left,
+      top: this.props.params.top,
+      left: this.props.params.left,
       borderWidth: 5,
       borderColor: 'tomato',
     },
@@ -19,7 +19,7 @@ class SvgMap extends Component {
     const scale = this.props.params.scale;
     const fill = "black";
     const stroke = "red";
-    const strokeWidth = 5;
+    const strokeWidth = 1;
 
     return (
       <Svg style={this.styles.container}>
