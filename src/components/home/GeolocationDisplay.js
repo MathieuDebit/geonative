@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+
 class GeolocationDisplay extends Component {
   dateFormat(timestamp) {
     return new Date(timestamp).toUTCString();
@@ -27,6 +28,7 @@ class GeolocationDisplay extends Component {
             </Text>
           }
         </Text>
+
         <Text>
           { lastPosition.coords &&
             <Text>

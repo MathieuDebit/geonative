@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GeolocationDisplay from './GeolocationDisplay';
+import SvgMap from './SvgMap';
 
 class HomeContainer extends Component {
   state = {
@@ -38,10 +39,11 @@ class HomeContainer extends Component {
 
   render() {
     return (
-      <GeolocationDisplay
-        initialPosition = {this.state.initialPosition}
-        lastPosition = {this.state.lastPosition}
-      />
+      <SvgMap params={{
+          top: 0,
+          left: 0,
+          scale: 1,
+        }} />
     );
   }
 }
